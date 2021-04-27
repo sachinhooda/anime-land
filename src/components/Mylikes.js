@@ -1,5 +1,4 @@
 import React from "react";
-import numWords from "num-words";
 
 import Animecard from "./Animecard";
 
