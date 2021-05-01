@@ -15,7 +15,7 @@ const Animecard = ({ details, showLikeIcon, showFavIcon }) => {
           alt=""
         />
       </a>
-      <div className="content" style={{ width: "100%", height: "184px" }}>
+      <div className="content" style={{ width: "100%", height: "167px" }}>
         <div className="header">{details.title}</div>
         <div className="description">
           <p>{details.synopsis}</p>
