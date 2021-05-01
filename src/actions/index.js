@@ -1,5 +1,5 @@
 import jikanAnimes from "../apis/jikanAnimes";
-import { SEARCH_ANIMES, SEARCH_TERM, UPDATE_FILTER_STATE } from "./types";
+import { SEARCH_ANIMES, SEARCH_TERM } from "./types";
 
 export const searchAnimes = (searchTerm, queryConfig = {}) => async (
   dispatch
@@ -11,7 +11,7 @@ export const searchAnimes = (searchTerm, queryConfig = {}) => async (
   const defaultQueryString = "page=1&type=tv&limit=5";
   const queryString =
     searchTerm === undefined
-      ? `q=&order_by=members&sort=desc${defaultQueryString}`
+      ? `q=&order_by=score&sort=desc${defaultQueryString}`
       : `q=${searchTerm}&${defaultQueryString}`;
   const response = await jikanAnimes.get(`search/anime?${queryString}`);
 
@@ -25,11 +25,5 @@ export const searchTerm = (searchTerm) => {
   return {
     type: SEARCH_TERM,
     payload: searchTerm,
-  };
-};
-
-export const updateFilterState = () => {
-  return {
-    type: UPDATE_FILTER_STATE,
   };
 };

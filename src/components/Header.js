@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
+  console.log(props);
   return (
-    <div className="ui segment">
       <div className="ui blue four item inverted menu">
-        <Link className="item" to="/">
+        <Link className="item active" to="/">
           Home
         </Link>
-        <Link className="item active" to="/favourites">
+        <Link className="item" to="/favourites">
           My Favourites
         </Link>
         <Link className="item" to="/likes">
@@ -17,7 +17,7 @@ const Header = (props) => {
           Contact us
         </Link>
       </div>
-    </div>
+  
   );
 };
 

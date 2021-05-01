@@ -1,3 +1,2 @@
 export const SEARCH_ANIMES = "SEARCH_ANIMES";
 export const SEARCH_TERM = "SEARCH_TERM";
-export const UPDATE_FILTER_STATE = "UPDATE_FILTER_STATE";

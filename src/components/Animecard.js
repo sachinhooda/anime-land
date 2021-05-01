@@ -1,5 +1,6 @@
 const Animecard = ({ details, showLikeIcon, showFavIcon }) => {
-  console.log(details);
+  const progressType =
+    details.score > 7.5 ? "success" : details.score > 4 ? "warning" : "error";
   return (
     <div className="ui blue card">
       <a
@@ -9,19 +10,23 @@ const Animecard = ({ details, showLikeIcon, showFavIcon }) => {
         rel="noopener noreferrer"
       >
         <img
-          style={{ width: "100", height: "200" }}
+          style={{ width: "100%", height: "300px" }}
           src={details.image_url}
           alt=""
         />
       </a>
-      <div className="content">
+      <div className="content" style={{ width: "100%", height: "184px" }}>
         <div className="header">{details.title}</div>
         <div className="description">
           <p>{details.synopsis}</p>
         </div>
       </div>
       <div className="extra">
-        <div className="ui success progress" data-percent="100" id="example6">
+        <div
+          className={`ui ${progressType} progress`}
+          data-percent="100"
+          id="example6"
+        >
           <div className="bar" style={{ width: `${details.score * 10}%` }}>
             <div className="progress">{Math.round(details.score * 10)}%</div>
           </div>

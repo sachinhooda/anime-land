@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { searchAnimes, searchTerm, updateFilterState } from "../actions";
+import { searchAnimes, searchTerm } from "../actions";
 import { QUERY_CONFIG } from "../constants";
 
 const Searchbar = (props) => {
@@ -23,24 +23,6 @@ const Searchbar = (props) => {
               onClick={performSearch(props)}
               className="inverted circular search link icon"
             ></i>
-          </div>
-        </div>
-      </div>
-      <div className="one wide column">
-        <div className="ui accordion">
-          <div className={props.isFilterActive ? "active title" : "title"}>
-            <i onClick={updateFilter(props)} className="icon dropdown"></i>
-            Filters
-          </div>
-          <div className={props.isFilterActive ? "active content" : "content"}>
-            <div className="ui checkbox">
-              <input type="checkbox" name="anime" />
-              <label>Anime</label>
-            </div>
-            <div className="ui checkbox">
-              <input type="checkbox" name="manga" />
-              <label>Manga</label>
-            </div>
           </div>
         </div>
       </div>
@@ -73,21 +55,13 @@ const updateSearchTerm = (props) => {
   };
 };
 
-const updateFilter = (props) => {
-  return (e) => {
-    props.updateFilterState();
-  };
-};
-
 const mapStateToProps = (state) => {
   return {
     searchTermValue: state.searchTerm,
-    isFilterActive: state.isFilterActive,
   };
 };
 
 export default connect(mapStateToProps, {
   searchAnimes,
   searchTerm,
-  updateFilterState,
 })(Searchbar);

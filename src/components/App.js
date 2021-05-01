@@ -9,7 +9,7 @@ import Mylikes from "./Mylikes";
 const App = () => {
   return (
     <div className="ui center aligned fluid container">
-      <h1 className="animate__animated animate__tada">Anime Land</h1>
+      {/* <h2 className="animate__animated animate__tada">Anime Land</h2> */}
       <Router>
         <Header></Header>
         <Switch>

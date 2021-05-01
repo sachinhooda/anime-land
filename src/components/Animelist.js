@@ -13,9 +13,17 @@ const Animelist = (props) => {
       </div>
     );
   });
-  const loader =  <div className="ui segment"><div className="ui active dimmer"><div className="ui massive text loader">Loading</div></div></div>;
+  const loader = (
+    <div className="ui segment">
+      <div className="ui active dimmer">
+        <div className="ui massive text loader">Loading</div>
+      </div>
+    </div>
+  );
   return (
-    <div className="ui five stackable cards">{animes.length ? animes : loader}</div>
+    <div className="ui five stackable cards">
+      {animes.length ? animes : loader}
+    </div>
   );
 };
 

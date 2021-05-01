@@ -20,7 +20,7 @@ class Myfavourites extends React.Component {
 
     return (
       <div className="ui segment">
-        <div className={`ui five stackable cards`}>{animes}</div>
+        <div className="ui five stackable cards">{animes}</div>
       </div>
     );
   }
