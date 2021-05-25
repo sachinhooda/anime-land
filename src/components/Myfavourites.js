@@ -11,7 +11,7 @@ class Myfavourites extends React.Component {
         <div key={id} className="column">
           <Animecard
             details={anime}
-            showLikeIcon={true}
+            showLikeIcon={false}
             showFavIcon={false}
           ></Animecard>
         </div>

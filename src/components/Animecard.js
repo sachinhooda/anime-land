@@ -1,6 +1,15 @@
 const Animecard = ({ details, showLikeIcon, showFavIcon }) => {
   const progressType =
     details.score > 7.5 ? "success" : details.score > 4 ? "warning" : "error";
+
+  const currentLikes = JSON.parse(localStorage.getItem("likes"));
+  const alreadyLiked = details.mal_id in currentLikes;
+  const alreadyLikeStyle = { opacity: 1, color: "#ff2733" };
+
+  const currentFavourites = JSON.parse(localStorage.getItem("favourites"));
+  const alreadyFavourite = details.mal_id in currentFavourites;
+  const alreadyFavouriteStyle = { opacity: 1, color: "#ffb70a" };
+
   return (
     <div className="ui blue card">
       <a
@@ -15,7 +24,7 @@ const Animecard = ({ details, showLikeIcon, showFavIcon }) => {
           alt=""
         />
       </a>
-      <div className="content" style={{ width: "100%", height: "167px" }}>
+      <div className="content" style={{ width: "100%", height: "166px" }}>
         <div className="header">{details.title}</div>
         <div className="description">
           <p>{details.synopsis}</p>
@@ -38,6 +47,7 @@ const Animecard = ({ details, showLikeIcon, showFavIcon }) => {
           <span className="left floated like">
             <i
               className="like icon"
+              style={alreadyLiked ? alreadyLikeStyle : {}}
               onClick={() => {
                 onClickLike(details);
               }}
@@ -51,6 +61,7 @@ const Animecard = ({ details, showLikeIcon, showFavIcon }) => {
           <span className="right floated star">
             <i
               className="star icon"
+              style={alreadyFavourite ? alreadyFavouriteStyle : {}}
               onClick={() => {
                 onClickFavourite(details);
               }}

@@ -12,7 +12,7 @@ class Mylikes extends React.Component {
           <Animecard
             details={anime}
             showLikeIcon={false}
-            showFavIcon={true}
+            showFavIcon={false}
           ></Animecard>
         </div>
       );
